@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "703569155429",
+    "firebase_url": "https://quickbus-e2a41-default-rtdb.firebaseio.com",
+    "project_id": "quickbus-e2a41",
+    "storage_bucket": "quickbus-e2a41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703569155429:android:9cc83d60053b31a7dc3d8c",
+        "android_client_info": {
+          "package_name": "com.example.quickbus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKtH9wJA9bo2_PEVjXoqWWKZRRUAaHzb4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
