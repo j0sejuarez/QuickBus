@@ -5,4 +5,5 @@
     <string name="tiempo_estimado">Tiempo estimado</string>
     <string name="numero_de_micro">Numero de micro:</string>
     <string name="ruta">Ruta:</string>
+    <string name="ver_micros">Ver micros</string>
 </resources>

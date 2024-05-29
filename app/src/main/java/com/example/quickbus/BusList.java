@@ -45,6 +45,7 @@ public class BusList extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     Bus bus = dataSnapshot.getValue(Bus.class);
+                    listBus.add(bus);
                 }
                 adapter.notifyDataSetChanged();
             }
