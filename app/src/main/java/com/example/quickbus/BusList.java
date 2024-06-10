@@ -39,6 +39,7 @@ public class BusList extends AppCompatActivity {
         bdQuickBus = FirebaseDatabase.getInstance().getReference("bus");
         listBus = new ArrayList<>();
         rViewBus.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new MyAdapter(this,listBus);
         rViewBus.setAdapter(adapter);
         bdQuickBus.addValueEventListener(new ValueEventListener() {
             @Override
