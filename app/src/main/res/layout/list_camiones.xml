@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
     tools:context=".BusList">
 
     <View
@@ -14,15 +15,17 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rViewBuses"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/estilo_log"/>
+        android:layout_height="200dp"
+        android:layout_below="@id/estilo_log"
+        android:padding="10dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lista de Camiones"
         android:textColor="@color/white"
-        android:textSize="34dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp">
