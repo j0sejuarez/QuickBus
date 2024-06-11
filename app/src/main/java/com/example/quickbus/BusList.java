@@ -27,7 +27,7 @@ public class BusList extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(BusList.this,MainActivity.class));
+        startActivity(new Intent(BusList.this, MainActivity.class));
         finish();
     }
 
@@ -35,25 +35,31 @@ public class BusList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_camiones);
+
         rViewBus = findViewById(R.id.rViewBuses);
-        bdQuickBus = FirebaseDatabase.getInstance().getReference("bus");
-        listBus = new ArrayList<>();
         rViewBus.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MyAdapter(this,listBus);
+
+        listBus = new ArrayList<>();
+        adapter = new MyAdapter(this, listBus);
         rViewBus.setAdapter(adapter);
+
+        bdQuickBus = FirebaseDatabase.getInstance().getReference("bus");
         bdQuickBus.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
+                listBus.clear(); // Clear the list before adding new data
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Bus bus = dataSnapshot.getValue(Bus.class);
-                    listBus.add(bus);
+                    if (bus != null) {
+                        listBus.add(bus);
+                    }
                 }
                 adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                // Handle error if needed
             }
         });
     }

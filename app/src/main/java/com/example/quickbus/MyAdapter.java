@@ -15,7 +15,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     Context context;
     ArrayList<Bus> BusList;
 
-    public MyAdapter(Context context,ArrayList<Bus> BusList) {
+    public MyAdapter(Context context, ArrayList<Bus> BusList) {
         this.context = context;
         this.BusList = BusList;
     }
@@ -23,7 +23,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     @NonNull
     @Override
     public MyAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.camiones,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.camiones, parent, false);
         return new MyViewHolder(v);
     }
 
@@ -31,7 +31,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
         Bus bus = BusList.get(position);
         holder.ruta.setText(bus.getRuta());
-        holder.num_micro.setText(bus.getRuta());
+        holder.num_micro.setText(String.valueOf(bus.getNum_camion())); // Convertir entero a cadena
         holder.tiempo_est.setText(bus.getTiempo_est());
         holder.sig_parada.setText(bus.getSig_parada());
         holder.estado.setText(bus.getEstado());
@@ -42,8 +42,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         return BusList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView ruta,num_micro,tiempo_est,sig_parada,estado;
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+        TextView ruta, num_micro, tiempo_est, sig_parada, estado;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             ruta = itemView.findViewById(R.id.txtRuta);

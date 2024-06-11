@@ -7,6 +7,8 @@ public class Bus {
     private String sig_parada;
     private String estado;
 
+    public Bus() {
+    }
     public Bus(String ruta,int num_camion, String tiempo_est, String sig_parada, String estado) {
         this.ruta = ruta;
         this.num_camion = num_camion;
