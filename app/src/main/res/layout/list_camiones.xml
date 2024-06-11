@@ -9,7 +9,7 @@
     <View
         android:id="@+id/estilo_log"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:background="@drawable/style_view"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rViewBuses"
