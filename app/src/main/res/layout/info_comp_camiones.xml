@@ -6,9 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".BusList">
 
+    <View
+        android:id="@+id/estilo_log"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/style_view"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rViewBus"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/estilo_log"
+        android:padding="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informacion Autobus"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp">
+
+    </TextView>
 
 </RelativeLayout>
